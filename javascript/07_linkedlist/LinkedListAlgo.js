@@ -109,6 +109,21 @@ class LinkedList {
         reverseList.display()
         return reverseList
     }
+    //不改变链表指针，改变值的顺序
+    reverseList3(){
+       let currentNode = this.head
+       let arr = []
+       while(currentNode !== null){
+          arr.push(currentNode.element)
+          currentNode = currentNode.next
+       }
+        currentNode = this.head
+        while(currentNode !== null){
+           currentNode.element = arr.pop()
+           currentNode = currentNode.next
+        }
+    }
+    
     // 环验证
     checkCircle() {
         let fast = this.head.next
